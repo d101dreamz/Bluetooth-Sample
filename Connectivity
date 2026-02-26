@@ -1,0 +1,67 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerialBT(3,2);
+
+void setup() {
+  Serial.begin(9600);
+  mySerialBT.begin(9600);
+
+}
+
+void loop() {
+    char bt = mySerialBT.available();
+    if (bt) {
+      bt = mySerialBT.read();
+      if (bt == 97) {
+        pinMode(10, OUTPUT);
+         digitalWrite(10, 1);
+        pinMode(11, OUTPUT);
+         digitalWrite(11, 0);
+        pinMode(12, OUTPUT);
+         digitalWrite(12, 1);
+        pinMode(13, OUTPUT);
+         digitalWrite(13, 0);
+      }
+      if (bt == 98) {
+        pinMode(10, OUTPUT);
+         digitalWrite(10, 0);
+        pinMode(11, OUTPUT);
+         digitalWrite(11, 1);
+        pinMode(12, OUTPUT);
+         digitalWrite(12, 0);
+        pinMode(13, OUTPUT);
+         digitalWrite(13, 1);
+      }
+      if (bt == 99) {
+        pinMode(10, OUTPUT);
+         digitalWrite(10, 0);
+        pinMode(11, OUTPUT);
+         digitalWrite(11, 1);
+        pinMode(12, OUTPUT);
+         digitalWrite(12, 1);
+        pinMode(13, OUTPUT);
+         digitalWrite(13, 0);
+      }
+      if (bt == 100) {
+        pinMode(10, OUTPUT);
+         digitalWrite(10, 1);
+        pinMode(11, OUTPUT);
+         digitalWrite(11, 0);
+        pinMode(12, OUTPUT);
+         digitalWrite(12, 0);
+        pinMode(13, OUTPUT);
+         digitalWrite(13, 1);
+      }
+      if (bt == 101) {
+        pinMode(10, OUTPUT);
+         digitalWrite(10, 0);
+        pinMode(11, OUTPUT);
+         digitalWrite(11, 0);
+        pinMode(12, OUTPUT);
+         digitalWrite(12, 0);
+        pinMode(13, OUTPUT);
+         digitalWrite(13, 0);
+      }
+    }
+
+}
